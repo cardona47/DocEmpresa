@@ -13,12 +13,11 @@ import Vistas.Login;
 public class Empresa {
 
     /**
-     * @param args the command line arguments
+     * Método getLogin y llamado por medio de la nueva variable a la clase Login, también, junto con setVisible permite mostrar la interfaz de la clase llamada
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Login login=Login.getLogin(); // se conecta la clase Login con la instancia login y haciendo el uso del singleton, metodo getLogin()
-        login.setVisible(true); //con el llamado de la clase Login con la instancia login se hace visible la interfaz grafica de la clase Login
+        Login login=Login.getLogin();
+        login.setVisible(true);
     }
     
 }

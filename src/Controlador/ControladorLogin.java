@@ -8,29 +8,24 @@ import DAO.DAOLogin;
 
 /**
  *
- * @author AncyElMasPro
+ * @author sistemas
  * 
- * clase publica ControladorLogin que implementa la interface DAOLogin
  */
 public class ControladorLogin implements DAOLogin{
     
-    private static ControladorLogin controladorLogin; //se crea una varibale estatica controladorLogin de tipo clase ControladorLogin
-    private String usuario; //variable cadena de texto usuario
-    private String contrasenia; //variable cadena de texto contrasenia 
+    private static ControladorLogin controladorLogin;
+    private String usuario; //Nombre de usuario
+    private String contrasenia; //Contraseña de usuario  
     
     
-    /**
-     * metodo privado para hacer implementaciones de la clase ControladorLogin()
-     */
-    private ControladorLogin() {
+   
+    private ControladorLogin() { //Metodo usado para implementar elementos en la clase ControladorLogin()
         
     }
     
-    /**
-     * metodo singleton que sirve para hacer una sola instancia de la clase 
-     * condicional si controladorLogin es vacio se crea una nueva instancia 
-     * @return devuelve la instancia controladorLogin
-     */
+    
+     //Singleton para controlar instancias
+    
     public static ControladorLogin getControladorLogin(){
         if(controladorLogin==null)
             controladorLogin=new ControladorLogin();
@@ -39,10 +34,10 @@ public class ControladorLogin implements DAOLogin{
     }
     
     /**
-     * metodo que permite verificar si los usuarios son correctos
-     * @param usuario   usuario de los datos guardados
-     * @param contrasenia contraseña de los datos guardados
-     * @return falso si  no es correcto, true si es correcto el usuario ingresado 
+     * Método que permite la verificación de usuarios
+     * @param usuario Nombre de usuario
+     * @param contrasenia Contraseña de usuario
+     * @return Por medio de True o False(de tipo booleano) se verifica y se devuelve 
      */
     @Override
     public boolean VerificarUsuarios(String usuario, String contrasenia) {
@@ -56,18 +51,16 @@ public class ControladorLogin implements DAOLogin{
 
     @Override
     /**
-     * metodo que da el usuario ingresado y lo devuelve
+     * Método que permite mostrar el usuario registrado
      */
     public String getUsuario() {
         return this.usuario;
     }
 
     @Override
-    /**
-     * metodo que permite cambiar la contraseña 
-     * this.contrasenia = contrasenia la cambia por una nueva 
-     * devuelve el estado, solo va a devolver estado true
-     */
+    
+    //Mtodoue permite el cambio de contraseña, guardando en contrasenia la actualizada
+    
     public boolean CambiarContrasenia(String contrasenia) {
         boolean estado=true;        
         this.contrasenia=contrasenia;

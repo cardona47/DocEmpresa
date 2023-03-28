@@ -14,19 +14,18 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
 
-    private static Login login; //Se declara la variable login de la clase Login
-    private DAOLogin cLogin=ControladorLogin.getControladorLogin(); // se declara la variable cLogin desde la calse DAOLogin para utilizar el metodo getControladorLogin();
+    private static Login login; //Permite de esta manera conectar a la clase llamada Login 
+    private DAOLogin cLogin=ControladorLogin.getControladorLogin(); //Conexión con ControladorLogin por medio de cLogin; por medio de getControladorLogin se Accede a datos de usuraio
     
     /**
      * Creates new form Login
      */
-    private Login() { //metodo que inicializa los componentes de la clase Login 
-        initComponents();
+    private Login() { //Método de tipo -privado-
+        initComponents(); //= Inicializar componentes
     }
     /**
-     * metodo para que solo haya una instancia de la clase
-     * se puede utilizar para que no haya perdida de informacion, al cual se le llama Singleton
-     * se utiliza un condicional para devolver la instancia login de la clase Login 
+     * Método de tipo -publico- pertenecioente a clase Login getLogin
+     * Singleton 
      */
     public static Login getLogin(){ 
                                     
@@ -108,29 +107,26 @@ public class Login extends javax.swing.JFrame {
 
     private void usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usuarioMouseClicked
         // TODO add your handling code here:
-        usuario.setText(""); //se utiliza para quitar el texto ingresado en pantalla una vez se da clic
+        usuario.setText(""); //borra el texto de la pantalla 
     }//GEN-LAST:event_usuarioMouseClicked
 
     private void contraseniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contraseniaMouseClicked
         // TODO add your handling code here:
-        contrasenia.setText("");//se utiliza para quitar el texto ingresado en pantalla una vez se da clic
+        contrasenia.setText("");//borra el texto de la pantalla
     }//GEN-LAST:event_contraseniaMouseClicked
 
     private void olvidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_olvidoMouseEntered
         // TODO add your handling code here:
-        olvido.setForeground(new java.awt.Color(51, 0, 255)); //se cambia el color en el Jlabel Olvidó su contraseña
+        olvido.setForeground(new java.awt.Color(51, 0, 255)); //cambia el color azul cuando se pone el puntero del mouse
     }//GEN-LAST:event_olvidoMouseEntered
 
     private void olvidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_olvidoMouseExited
         // TODO add your handling code here:
-        olvido.setForeground(new java.awt.Color(0, 0, 0)); //vuelve el color negro al dejar de pasar por el JLbale Olvidó su contraseña
+        olvido.setForeground(new java.awt.Color(0, 0, 0)); //devuelve al color original al quitar el puntero del mouse
     }//GEN-LAST:event_olvidoMouseExited
     
-    /** Se utiliza el boton Iniciar Sesion
-     * con un condicional se llama el metodo VerificarUsuarios de la clase COntroladorLogin
-     *  ademas ésta clase esta implementada con la interface DAOLogin, para un inicio de sesion mas "seguro"
-     * el condicional verifica si el usuario ingresado es el correcto y da un mensaje de "usuario correcto" de lo contrario
-     * será un mensaje de "usuario incorrecto" con sus iconos, respectivamente 
+    /** 
+     * Uso de if para Verificación de datos junto con el método de VerificarUsuarios, por medio de cLogin, mostrando en pantalla posteriormente  
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

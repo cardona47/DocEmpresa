@@ -10,22 +10,19 @@ package DAO;
  */
 public interface DAOLogin {
     /**
-     * metodo que verifica si el usuario y la contraseña ingresados son correctos
-     * @param usuario usuario ingresado
-     * @param contrasenia contraseña ingresada
-     * @return si los usuarios son correctos es true, sino false
+     * Método que permite la verificación de usuarios 
+     * @param usuario Nombre de usuario
+     * @param contrasenia Contraseña de usuario
+     * @return Por medio de True o False(de tipo booleano) se verifica y se devuelve 
      */
     public boolean VerificarUsuarios(String usuario, String contrasenia);
     /**
-     * da el usuario ingresado
-     * @return devuelve el usuario ingresado
+     * Método que permite mostrar usuario registrado 
      */
     public String getUsuario();
     
     /**
-     * metodo que se usa para cambiar la contraseña 
-     * @param contrasenia se cambia la contraseña
-     * @return true 
+     * Método que permite el cambio de contraseña 
      */
     public boolean CambiarContrasenia(String contrasenia);
     
